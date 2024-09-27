@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-configmap
+data:
+  DB_NAME: mydatabase
+  DB_USERNAME: myuser
+  DB_HOST: 10.100.77.122
+  DB_PORT: "5432"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-secret
+type: Opaque
+data:
+  password: bXlwYXNzd29yZA==
