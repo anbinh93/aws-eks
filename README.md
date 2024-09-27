@@ -160,9 +160,9 @@ kubectl get svc
 kubectl port-forward service/postgresql-service 5433:5432
 ```
 
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/get_svc.png "Title")
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/describe_service_postgres.png?raw=true "Title")
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/describe_deployment_postgres.png?raw=true "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/get_svc.png "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/describe_service_postgres.png?raw=true "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/describe_deployment_postgres.png?raw=true "Title")
 
 
 Now you can use PGAdmin to connect to your database
@@ -186,7 +186,7 @@ You can use Postman to test the API using
 GET http://127.0.0.1:5153/api/reports/user_visits
 ```
 Here is the image result
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/send_success_api.png?raw=true "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/send_success_api.png?raw=true "Title")
 
 2.2. Deploy the application to cloud
 
@@ -195,11 +195,11 @@ Then, create an Amazon CodeBuild project that is connected to your project's Git
 Once they are done, create a ```buildspec.yaml``` file that will be triggered whenever the project repository is updated
 
 
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/build_success.png?raw=true "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/build_success.png?raw=true "Title")
 
 Begin by creating a ConfigMap. It will store all the plaintext variables such as DB_HOST, DB_USERNAME, DB_PORT, DB_NAME.
 * DB_HOST is the name of the service that you get from running ```kubectl get svc```.
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/get_svc.png?raw=true "asasasas")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/get_svc.png?raw=true "asasasas")
 
 In this case, the DB_HOST will be ```10.100.77.122```
 
@@ -296,14 +296,14 @@ spec:
 ```
 Then you can check all the pods and services to ensure that all the service is running
 
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/get_all_pod.png?raw=true "Title")
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/get_all_svc.png?raw=true "Title")
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/describe_svc_coworking.png?raw=true "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/get_all_pod.png?raw=true "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/get_all_svc.png?raw=true "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/describe_svc_coworking.png?raw=true "Title")
 
 
 You can also use Postman with the External IP of coworking service to check
 
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/check_svc.png?raw=true "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/check_svc.png?raw=true "Title")
 
 
 #### 3. Check log from Cloudwatch
@@ -329,8 +329,8 @@ aws eks create-addon --addon-name amazon-cloudwatch-observability --cluster-name
 After that you can check the log of your application on CloudWatch to verify it run normally
 
 
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/cloudwatch.png?raw=true "Title")
-![Alt text](https://github.com/NDNM1408/aws-eks/blob/main/images/log.png?raw=true "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/cloudwatch.png?raw=true "Title")
+![Alt text](https://github.com/anbinh93/aws-eks/blob/main/images/log.png?raw=true "Title")
 
 
 
